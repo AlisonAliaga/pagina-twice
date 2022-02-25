@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "video";
+    grid-template-rows: 80px 500px;
+}
+
+/*----BARRA DE NAVEGACIÓN----*/
+
+nav {
+    grid-area: nav;
+    background-color: black;
+}
+
+.enlace {
+    position: absolute;
+    padding: 12px 15px;
+    padding-bottom: 5px;   
+}
+.logo {
+    width: 80px;
+    height: 58px;
+}
+
+ul {
+    position:fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background: rgb(255, 255, 255) ;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+}
+
+nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 25px;     
+}
+
+nav ul li a {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+}
+
+#check:checked ~ ul {
+    left: 0;
+}
+
+/*----ICONO MENU----*/
+
+.checkbtn {
+    position:absolute;
+    display: flex;
+    margin-left: 85%;
+    font-size: 25px; 
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding-top: 30px;
+    
+ }
+ 
+ #check {
+     display: none;
+}
+
+/*----VIDEO SCIENTIST----*/
+
+video {
+    grid-area: video;
+    position: relative;
+    top: 0;
+    left:0;
+    width:100%;
+    height:122%;
+    object-fit:cover;
+}
+
+.capa {
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    height:98.6%;
+    background:#000000;
+    opacity:0.5;
+}
+
+/* LETRA DENTRO DEL VIDEO SCIENTIST */
+
+.letra-contenedor {
+    grid-area: video;
+    z-index: 1;
+    padding-top: 200px;
+    text-align: right;
+    margin-right: 5px;
+}
+.letra-contenedor h1 {
+    color: white;
+    text-align: right;
+}
+.letra-contenedor h2 {
+    color: white;
+    font-weight:lighter;
+    padding-top: 10px;  
+}
+footer {
+    text-align: center;
+    z-index: 1;    
+}
+.copyright-index {
+    color: white;
+    font-size:x-small;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 70px;
+}
+
+
+/*----ESTILOS PERFIL----*/
+
+.imagen {
+    width: 200px;
+    padding-bottom: 20px;
+}
+
+.perfil-container {
+    text-align: center;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 10px;  
+}
+
+.texto-perfil {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    padding: 9px
+}
+
+.copyright {
+    color: rgb(0, 0, 0);
+    font-size:x-small;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;    
+}
+
+/*----ESTILOS GALERIA----*/
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-auto-rows: 190px;
+    padding: 50px;
+    grid-gap: 3px;
+    position: relative;
+}
+.gallery--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.copyright-galeria {
+    color: rgb(0, 0, 0);
+    font-size:x-small;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 175px;
+} 
+
+/*----ESTILOS VIDEOS----*/
+
+.video {
+    object-fit: cover;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.title-video {
+    display: flex;
+    font-size: x-small;
+    justify-content: space-between;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+.title-video span {
+    padding-top: 5px;
+}
+
+/*----ESTILOS DISCOGRAFIA----*/
+
+.discografia {
+    object-fit: cover;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.title-discografia {
+    display: flex;
+    font-size: x-small;
+    justify-content: space-between;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.title-discografia span {
+    padding-top: 5px;
+}
+
+/*------------------------------*/
+
+@media screen and (min-width: 700px) {
+    .grid-container {
+        grid-template-areas: 
+        "nav"
+        "video"
+        "footer";
+        grid-template-rows: 80px 550px 80px; 
+    }
+
+    .enlace {
+        padding-left: 20px;
+    }
+
+    .checkbtn {
+        margin-left: 92%;
+    }
+    .capa {
+        height: 108.1%;
+    }
+    .letra-contenedor {
+        margin-right: 20px;
+        font-size: 23px;
+    }
+    .title-discografia {
+        padding-left: 100px;
+        padding-right: 150px;
+    }
+    
+}
+
+@media screen and (min-width: 1000px) {
+    .grid-container {
+        grid-template-areas: 
+        "nav"
+        "video"
+        "footer";
+        grid-template-rows: 80px 550px 80px; 
+    }
+    .capa{
+        height: 670px;
+    }
+        
+}
+
+
